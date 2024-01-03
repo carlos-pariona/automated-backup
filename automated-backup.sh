@@ -35,3 +35,13 @@ if [ $? -eq 0 ]; then
 else
   echo "Error creating the backup."
 fi
+
+# Delete the backup file
+rm "$DESTINATION/$BACKUP_NAME"
+
+# Check if the backup file was deleted successfully
+if [ $? -eq 0 ]; then
+  echo "Backup file deleted successfully."
+else
+  echo "Error deleting the backup file."
+fi
